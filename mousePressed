@@ -1,0 +1,32 @@
+ public void mousePressed(MouseEvent e){ 
+    ChessPiece piece=null;Rectangle rect=null;
+    if(e.getSource()==this)move=false;
+    if(move==false)
+      if(e.getSource() instanceof ChessPiece){
+         piece=(ChessPiece)e.getSource();   
+         startX=piece.getBounds().x;        
+         startY=piece.getBounds().y;     
+          rect=piece.getBounds();
+          for(int i=1;i<=x轴长;i++){
+        for(int j=1;j<=y轴长;j++){
+        int x=point[i][j].getX();
+        int y=point[i][j].getY();
+        if(rect.contains(x,y))
+        {startI=i;startJ=j;break;} }}}} 
+ public void mouseMoved(MouseEvent e){ }
+ public void mouseDragged(MouseEvent e){
+    ChessPiece piece=null;
+       if(e.getSource() instanceof ChessPiece){
+           piece=(ChessPiece)e.getSource();   move=true; 
+           e=SwingUtilities.convertMouseEvent(piece,e,this); }
+      if(e.getSource()==this){if(move&&piece!=null)
+      {x=e.getX(); y=e.getY();
+      if(红方走棋&&((piece.棋子类别()).equals(红方颜色))){
+piece.setLocation(x-piece.getWidth()/2,y-piece.getHeight()/2);}
+      if(黑方走棋&&(piece.棋子类别().equals(黑方颜色))){ 
+piece.setLocation(x-piece.getWidth()/2,y-piece.getHeight()/2);}}}}
+ public void mouseReleased(MouseEvent e){ …}
+public void mouseEntered(MouseEvent e){}
+ public void mouseExited(MouseEvent e){}
+ public void mouseClicked(MouseEvent e){ }
+}
