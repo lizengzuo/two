@@ -1,0 +1,18 @@
+棋盘的设计
+ public void paintComponent(Graphics g){
+     super.paintComponent(g);
+      for(int j=1;j<=y轴长;j++)   {
+g.drawLine(point[1][j].x,point[1][j].y,point[x轴长][j].x,point[x轴长][j].y); }
+     for(int i=1;i<=x轴长;i++)     {
+         if(i!=1&&i!=x轴长){
+        g.drawLine(point[i][1].x,point[i][1].y,point[i][y轴长-5].x,point[i][y轴长-5].y);
+       g.drawLine(point[i][y轴长-4].x,point[i][y轴长-4].y,point[i][y轴长].x,point[i][y轴长].y); }
+         else{
+        g.drawLine(point[i][1].x,point[i][1].y,point[i][y轴长].x,point[i][y轴长].y);}}       g.drawLine(point[4][1].x,point[4][1].y,point[6][3].x,point[6][3].y);
+g.drawLine(point[6][1].x,point[6][1].y,point[4][3].x,point[4][3].y);
+g.drawLine(point[4][8].x,point[4][8].y,point[6][y轴长].x,point[6][y轴长].y);
+g.drawLine(point[4][y轴长].x,point[4][y轴长].y,point[6][8].x,point[6][8].y);
+       for(int i=1;i<=x轴长;i++){ 
+       g.drawString(""+i,i*unitWidth,unitHeight/2);}int j=1;
+      for(char c='A';c<='J';c++){ 
+      g.drawString(""+c,unitWidth/4,j*unitHeight);j++;}} 
