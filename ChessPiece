@@ -1,0 +1,32 @@
+棋子的设计
+public class ChessPiece extends JLabel 
+{String name;
+   Color backColor=null,foreColor;
+   String 颜色类别=null;
+   ChessBoard board=null;
+   int width,height;
+  public ChessPiece(String name,Color fc,Color bc,int width,int height,ChessBoard board){
+     this.name=name;
+     this.board=board;
+     this.width=width;
+     this.height=height;
+     foreColor=fc; 
+     backColor=bc;
+     setSize(width,height);
+     setBackground(bc); 
+     addMouseMotionListener(board);
+     addMouseListener(board);}
+   public void paint(Graphics g){ 
+     g.setColor(foreColor);
+     g.fillOval(2,2,width-2,height-2);
+     g.setColor(Color.white);
+     g.setFont(new Font("隶书",Font.BOLD,28));    
+     g.drawString(name,7,height-8);
+     g.setColor(Color.yellow);
+     g.drawOval(2,2,width-2,height-2);}
+   public int getWidth(){return width;}
+   public int getHeight(){return height;}
+   public String getName(){return name;}
+   public Color 获取棋子颜色(){ return foreColor;}
+   public void set棋子类别(String 类别){颜色类别=类别;}
+  public String 棋子类别(){return  颜色类别;}}
